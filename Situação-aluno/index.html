@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação aluno</title>
+</head>
+
+<body>
+    <h1>Situação aluno</h1>
+
+    <button onclick="inicio()">Entrar com as notas</button>
+
+
+    <section id="resultado">
+
+     
+   <h3>Clique no botão acima para informar as notas do aluno.</h3>
+   
+    </section>
+
+    <script>
+        function inicio() {
+            let nome = window.prompt('Qual é o nome do aluno?')
+            let n1 = parseFloat(window.prompt(`Primeira nota de ${nome}:`))
+            let n2 = parseFloat(window.prompt(`Segunda nota de ${nome}:`))
+            let med = (n1 + n2) / 2
+
+            let msg
+            if (med > 6) {
+                msg = 'acima de 6, o aluno está <strong class= "if">APROVADO<strong>'
+            } else if (med < 3) {
+                msg = 'abaixo de 3, o aluno está <strong class= "else">REPROVADO<strong>'
+            } else {
+                msg = 'entre 3 e 6, o aluno está em <strong class= "elseif">RECUPERAÇÃO<strong>'
+            }
+
+            let resultado = document.getElementById('resultado')
+            
+            resultado.innerHTML = `<p>Analisando a situação de <strong>${nome}<strong>`
+            resultado.innerHTML += `<p>Com as notas ${n1} e ${n2}, a <strong>média é ${med}<strong>`
+            resultado.innerHTML += `<p>Com média ${msg}`
+        }
+    </script>
+</body>
+
+</html>

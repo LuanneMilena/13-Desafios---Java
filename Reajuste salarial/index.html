@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste salarial</title>
+</head>
+<body>
+    <h1>Reajuste salarial</h1>
+
+    <button onclick="inicio()">Reajustar salário</button>
+
+    <section id="resultado">
+
+        <p>clique no botão acima para iniciar.</p>
+
+    </section>
+
+
+    <script>
+          function inicio() {
+            let nome = window.prompt(`Qual é o nome do funcionário?`);
+            let salario = parseFloat(window.prompt(`Qual é o salário de ${nome}?`));
+            let por = parseFloat(window.prompt(`O salário de ${nome} vai ser reajustado em qual porcentagem?`));
+
+            let aumento = salario * (por / 100);
+            let nsa = salario + aumento;
+
+            let resultado= document.getElementById('resultado');
+            resultado.innerHTML = `<p>O salário atual era ${salario}R$`
+            resultado.innerHTML += `<p>Com o aumento de ${por}%, o salário vai aumentar ${aumento}R$ no próximo mês.`;
+            resultado.innerHTML += `<p>E a partir daí, ${nome} vai passar a ganhar ${nsa}R$.`;
+        }
+    </script>
+
+
+    
+</body>
+</html>
+

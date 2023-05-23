@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de moedas</title>
+</head>
+<body>
+    <h1>Conversor R$ &rarr; US$</h1>
+    <button onclick="inicio()">Converter</button>
+
+    <section id="resultado">
+        <p>Clique no botão acima para iniciar</p>
+    </section>
+
+    <script>
+        function inicio() {
+            let cota = Number(prompt('Antes de mais nada, quanto está a cotação de dolar agora?'))
+            let reais = Number(prompt('Quantos reais você tem na carteira?'))
+            let dolar = (reais/cota).toFixed(2)
+            let resultado = document.getElementById('resultado')
+
+            if(reais >4.97){
+                resultado.innerHTML =`<p> Se você tem R$${reais} na carteira, você pode conseguir US${dolar} dolares americanos<p>`
+            }else if(reais == 4.97){
+                resultado.innerHTML = `<p> Se você tem R$${reais} reais na carteira, você conseguir US${dolar} dolar americano<p>`
+            }else if(reais <4.97 && reais >1){
+                resultado.innerHTML = `<p> Se você tem R$${reais} reais na carteira, você conseguir US${dolar} cents americano<p>`
+            }else if (reais == 1){
+                resultado.innerHTML = `<p> Se você tem R$${reais} reais na carteira, você conseguir US${dolar} dolar americano<p>`
+            }
+            }
+            
+
+    
+    </script>
+    
+</body>
+</html>

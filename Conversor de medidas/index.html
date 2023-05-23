@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de medidas</title>
+</head>
+<body>
+    <h1>Conversor de medidas</h1>
+
+    <button onclick="inicio()">Converter</button>
+
+
+    <section id="resultado">
+
+        <p>Clique no botão acima para iniciar.</p>
+
+    
+    </section>
+
+
+    <script>
+        function inicio() {
+
+            let metro = window.prompt('Digite uma distância em metros(m)')
+            let km = (metro/1000).toFixed(3)
+            let hm = (metro/100).toFixed(3)
+            let dam = (metro/10).toFixed(3)
+            let dm = (metro * 10)
+            let cm = (metro * 100)
+            let mm = (metro * 1000)
+
+            let resultado = window.document.getElementById('resultado')
+           
+
+            resultado.innerHTML = `<h3>A distância de ${metro}, corresponde a...<h3>`
+            resultado.innerHTML += `<p>${km} quilômetros(km)<p>`
+            resultado.innerHTML += `<p>${hm} hactômetros(hm)<p>`
+            resultado.innerHTML += `<p>${dam} decâmetros(dam)<p>`
+            resultado.innerHTML += `<p>${dm} decímetros(dm)<p>`
+            resultado.innerHTML += `<p>${cm} centímetros(cm)<p>`
+            resultado.innerHTML += `<p>${mm} milímetros(dm)<p>`
+            
+        }
+    </script>
+</body>
+</html>

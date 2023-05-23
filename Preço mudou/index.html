@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço mudou</title>
+</head>
+<body>
+    <h1>Preço mudou</h1>
+    <button onclick="inicio()">Verificar</button>
+    <section id="resultado">
+
+    </section>
+
+    <section id="resultado2">
+
+        
+    </section>
+
+    <script>
+        function inicio() {
+       let anterior = Number(prompt('Qual era o preço anterior do produto?')) 
+       let atual = Number(prompt('Qual é o atual preço do produto?'))
+       let resultado = document.getElementById('resultado')
+       let resultado2 = document.getElementById('resultado2')
+
+       resultado.innerHTML = `<h2>Analisando os valores informados</h2>`
+       resultado.innerHTML += `<p>O produto custava R$ ${anterior.toFixed(2)} e agora custa R$${atual.toFixed(2)}</p>`
+
+       let dif1 = anterior - atual
+       let dif2 = atual - anterior 
+
+       if (anterior > atual) {
+
+        resultado.innerHTML +=('hoje o produto está mais barato')
+        resultado2.innerHTML +=(`O preço caiu R$ ${dif1.toFixed(2)} em relação ao preço anterior`)
+       } else if (anterior < atual) {
+        resultado.innerHTML +=('hoje o produto está mais caro')
+        resultado2.innerHTML +=(`O preço subiu R$ ${dif2.toFixed(2)} em relação ao preço anterior`)
+       } else {
+
+        resultado.innerHTML +=('O preço se manteve')
+       }
+        }
+    </script>
+
+    
+</body>
+</html>

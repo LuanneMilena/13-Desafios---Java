@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>antes e depois</title>
+</head>
+<body>
+    <h1>Antes e depois</h1>
+
+    <button onclick="inicio()">Antecessor e sucessor</button>
+
+    <p>Clique no botão acima para iniciar.</p>
+    
+    <script>
+        function inicio() {
+            let numero = Number(prompt('digite um número inteiro qualquer.'))
+            let antecessor = numero - 1
+            let sucessor = numero + 1
+            window.alert(`O ${numero} vem depois do ${antecessor} e antes do ${sucessor}.`)
+        }
+    </script>
+    
+</body>
+</html>
